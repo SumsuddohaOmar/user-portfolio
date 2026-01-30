@@ -70,7 +70,9 @@ nav ul li a {
 header {
   background-image: url(../images/developer.png), url(../images/header_bg.png);
   background-repeat: no-repeat;
-  background-position: top left, bottom right;
+  background-position:
+    top left,
+    bottom right;
 }
 /* banner styles */
 .banner {
@@ -105,22 +107,29 @@ main {
 /* about section */
 .about {
   border-radius: 10px;
-  padding: 130px 150px;
+  padding: 130px 50px;
   text-align: center;
   margin-top: 130px;
 }
-table {
+.personal-details{
+  display: flex;
   margin-top: 50px;
+  gap: 20px;
+  justify-content: space-evenly;
 }
-tr td {
-  color: #757575;
-  font-size: 18px;
-  padding-right: 20px;
-}
-tr th {
+.about-items p{
   color: #474747;
   font-size: 18px;
-  padding-right: 20px;
+  font-weight: 700;
+}
+.about-items h6{
+  color: #757575;
+  font-size: 18px;
+  font-weight: 400;
+}
+.about-items h6,p{
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 /* what i do section styles */
 .whatido {
@@ -208,7 +217,8 @@ footer {
   width: 50%;
   margin-top: 80px;
 }
-form input[type="text"],input[type="email"],
+form input[type="text"],
+input[type="email"],
 textarea {
   width: 50%;
   display: block;
@@ -217,4 +227,56 @@ textarea {
   border-radius: 10px;
   background-color: #ffffff;
   margin-bottom: 20px;
+}
+/* responsive media query */
+.hide {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  main{
+    margin: 0;
+  }
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+  .edu-exp {
+    flex-direction: column;
+  }
+  .education,
+  .experience {
+    padding-left: 10px;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 100px 10px;
+  }
+  .contact {
+    width: 100%;
+    padding: 0px 0px;
+  }
+  .form {
+    margin-top: auto;
+    width: 100%;
+  }
+  form input[type="text"],
+  input[type="email"],
+  textarea {
+    width: calc(100% - 70px);
+  }
+  .about{
+    padding: 50px 0px;
+  }
+  .personal-details{
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-description{
+    padding: 1px 20px;
+  }
+  .skill{
+    width: 220px;
+    padding: 30px 20px;
+  }
 }
